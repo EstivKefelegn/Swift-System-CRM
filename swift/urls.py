@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.display)
+    path("", views.swiftAccountDetail)
 ]

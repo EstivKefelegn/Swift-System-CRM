@@ -1,0 +1,118 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Swift Account CRM</title>
+
+
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Business Information -->
+        <div class="form-group">
+            <label for="business_name">Business Name</label>
+            <input type="text" name="business_name" id="business_name" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="business_address">Business Address</label>
+            <textarea name="business_address" id="business_address" class="form-control" required></textarea>
+        </div>
+    
+        <div class="form-group">
+            <label for="country_of_operation">Country of Operation</label>
+            <input type="text" name="country_of_operation" id="country_of_operation" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="account_number">Account Number</label>
+            <input type="text" name="account_number" id="account_number" class="form-control" required>
+        </div>
+    
+        <!-- SWIFT Service Requested -->
+        <div class="form-group">
+            <label for="swift_service_requested">SWIFT Service Requested</label>
+            <select name="swift_service_requested" id="swift_service_requested" class="form-control">
+                <option value="MT103">Payment Initiation (SWIFT MT103)</option>
+                <option value="MT202">Fund Transfer Services (SWIFT MT202)</option>
+                <option value="FX">Foreign Exchange Transactions</option>
+                <option value="SEC">Securities Settlements</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+    
+        <div class="form-group" id="other_service_description_container" style="display: none;">
+            <label for="other_service_description">Other Service Description</label>
+            <input type="text" name="other_service_description" id="other_service_description" class="form-control">
+        </div>
+    
+        <!-- Contact Information -->
+        <div class="form-group">
+            <label for="primary_contact_name">Primary Contact Name</label>
+            <input type="text" name="primary_contact_name" id="primary_contact_name" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="contact_email">Contact Email</label>
+            <input type="email" name="contact_email" id="contact_email" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="contact_phone">Contact Phone</label>
+            <input type="text" name="contact_phone" id="contact_phone" class="form-control" required>
+        </div>
+    
+        <!-- Security & Compliance -->
+        <div class="form-group">
+            <label for="country_of_incorporation">Country of Incorporation</label>
+            <input type="text" name="country_of_incorporation" id="country_of_incorporation" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="legal_entity_identifier">Legal Entity Identifier (Optional)</label>
+            <input type="text" name="legal_entity_identifier" id="legal_entity_identifier" class="form-control">
+        </div>
+    
+        <div class="form-group">
+            <label for="kyc_aml_documents">Upload KYC/AML Documents</label>
+            <input type="file" name="kyc_aml_documents" id="kyc_aml_documents" class="form-control">
+        </div>
+    
+        <!-- Additional Information -->
+        <div class="form-group">
+            <label for="authorized_signatory_name">Authorized Signatory Name</label>
+            <input type="text" name="authorized_signatory_name" id="authorized_signatory_name" class="form-control" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="additional_notes">Additional Notes</label>
+            <textarea name="additional_notes" id="additional_notes" class="form-control"></textarea>
+        </div>
+    
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <script>
+        // Handle dynamic field (if "Other" is selected for SWIFT service)
+        document.getElementById('swift_service_requested').addEventListener('change', function() {
+            var otherServiceField = document.getElementById('other_service_description_container');
+            if (this.value === 'OTHER') {
+                otherServiceField.style.display = 'block';
+            } else {
+                otherServiceField.style.display = 'none';
+            }
+        });
+    </script>
+    
+</body>
+
+
+</html>

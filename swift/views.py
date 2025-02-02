@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from . import swiftForm
+from django.contrib import messages
 
 # Create your views here.
-
-def display(request):
-    return HttpResponse("Swidt Account detail will be diplayed here")
+def swiftAccountDetail(request):
+    return render(request, "index.html")
