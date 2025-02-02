@@ -28,9 +28,12 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,9 +78,13 @@ WSGI_APPLICATION = 'swiftConnectPrototype.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+      'default': {
+        'ENGINE': 'django.db.backends.mysql',  # Use MySQL backend (works for MariaDB as well)
+        'NAME': 'SwiftConnect',             # Your MariaDB database name
+        'USER': 'HaronComputer',                   # The MariaDB user you created
+        'PASSWORD': 'mariaDBpassword1234',           # The password for that user
+        'HOST': 'localhost',                   # Use 'localhost' for local connections
+        'PORT': '3306',                        # Default MariaDB port
     }
 }
 

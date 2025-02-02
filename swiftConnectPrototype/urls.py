@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Custom admin site title
+admin.site.site_header = 'Swift Transfer Admin'
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("swift.urls"))
