@@ -1,0 +1,9 @@
+def Q5():
+    for value in q1.values():
+        print(value)
+        
+6,
+def Q6():
+    for key in q1.keys():
+        print(key)
+    

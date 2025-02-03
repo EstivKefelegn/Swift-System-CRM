@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -7,112 +7,371 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Swift Account CRM</title>
+    <title>Paylio - Money Transfer and Online Payments Dashboard HTML Template</title>
 
-
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png' %} " type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/apexcharts.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/nice-select.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/arafat-font.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/animate.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %} ">
 </head>
-<body>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <!-- Business Information -->
-        <div class="form-group">
-            <label for="business_name">Business Name</label>
-            <input type="text" name="business_name" id="business_name" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="business_address">Business Address</label>
-            <textarea name="business_address" id="business_address" class="form-control" required></textarea>
-        </div>
-    
-        <div class="form-group">
-            <label for="country_of_operation">Country of Operation</label>
-            <input type="text" name="country_of_operation" id="country_of_operation" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="account_number">Account Number</label>
-            <input type="text" name="account_number" id="account_number" class="form-control" required>
-        </div>
-    
-        <!-- SWIFT Service Requested -->
-        <div class="form-group">
-            <label for="swift_service_requested">SWIFT Service Requested</label>
-            <select name="swift_service_requested" id="swift_service_requested" class="form-control">
-                <option value="MT103">Payment Initiation (SWIFT MT103)</option>
-                <option value="MT202">Fund Transfer Services (SWIFT MT202)</option>
-                <option value="FX">Foreign Exchange Transactions</option>
-                <option value="SEC">Securities Settlements</option>
-                <option value="OTHER">Other</option>
-            </select>
-        </div>
-    
-        <div class="form-group" id="other_service_description_container" style="display: none;">
-            <label for="other_service_description">Other Service Description</label>
-            <input type="text" name="other_service_description" id="other_service_description" class="form-control">
-        </div>
-    
-        <!-- Contact Information -->
-        <div class="form-group">
-            <label for="primary_contact_name">Primary Contact Name</label>
-            <input type="text" name="primary_contact_name" id="primary_contact_name" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="contact_email">Contact Email</label>
-            <input type="email" name="contact_email" id="contact_email" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="contact_phone">Contact Phone</label>
-            <input type="text" name="contact_phone" id="contact_phone" class="form-control" required>
-        </div>
-    
-        <!-- Security & Compliance -->
-        <div class="form-group">
-            <label for="country_of_incorporation">Country of Incorporation</label>
-            <input type="text" name="country_of_incorporation" id="country_of_incorporation" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="legal_entity_identifier">Legal Entity Identifier (Optional)</label>
-            <input type="text" name="legal_entity_identifier" id="legal_entity_identifier" class="form-control">
-        </div>
-    
-        <div class="form-group">
-            <label for="kyc_aml_documents">Upload KYC/AML Documents</label>
-            <input type="file" name="kyc_aml_documents" id="kyc_aml_documents" class="form-control">
-        </div>
-    
-        <!-- Additional Information -->
-        <div class="form-group">
-            <label for="authorized_signatory_name">Authorized Signatory Name</label>
-            <input type="text" name="authorized_signatory_name" id="authorized_signatory_name" class="form-control" required>
-        </div>
-    
-        <div class="form-group">
-            <label for="additional_notes">Additional Notes</label>
-            <textarea name="additional_notes" id="additional_notes" class="form-control"></textarea>
-        </div>
-    
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    
-    <script>
-        // Handle dynamic field (if "Other" is selected for SWIFT service)
-        document.getElementById('swift_service_requested').addEventListener('change', function() {
-            var otherServiceField = document.getElementById('other_service_description_container');
-            if (this.value === 'OTHER') {
-                otherServiceField.style.display = 'block';
-            } else {
-                otherServiceField.style.display = 'none';
-            }
-        });
-    </script>
-    
-</body>
 
+
+<body>
+    <!-- start preloader -->
+
+    <!-- end preloader -->
+
+    <!-- Scroll To Top Start-->
+    <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+    <!-- Scroll To Top End -->
+
+    <!-- header-section start -->
+    <header class="header-section body-collapse">
+        <div class="overlay">
+            <div class="container-fruid">
+                <div class="row d-flex header-area">
+                    <div class="navbar-area d-flex align-items-center justify-content-between">
+                        <div class="sidebar-icon">
+                            <img src="{% static 'assets/images/icon/menu.png' %}" alt="icon">
+                        </div>
+
+                        <div class="dashboard-nav">
+                            <div class="single-item notifications-area">
+                                <div class="notifications-btn">
+                                    <img src="{% static 'assets/images/icon/bell.png' %}" class="bell-icon" alt="icon">
+                                </div>
+
+                            </div>
+                            <div class="single-item user-area">
+                                <div class="profile-area d-flex align-items-center">
+                                    <span class="user-profile">
+                                        <img src="{% static 'images/AvatarImg.png' %}" alt="User">
+                                    </span>
+                                    <i class="fa-solid fa-sort-down"></i>
+                                </div>
+                                <div class="main-area user-content">
+                                    <div class="head-area d-flex align-items-center">
+                                        <div class="profile-img">
+                                            <img src="{% static 'images/AvatarImg.png' %}" alt="User">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-wrapper">
+                        <div class="close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="sidebar-logo">
+                            <!-- <a href="dashboard.html"><img src="{% static 'assets/images/logo.png' %}" alt="logo"></a> -->
+                            <h5>Swift Account CRM</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="dashboard.html">
+                                    <img src="{% static 'assets/images/icon/dashboard.png' %}" alt="Dashboard">
+                                    <span>Swift Account Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="transactions.html">
+                                    <img src="{% static 'assets/images/icon/transactions.png' %}" alt="Transactions">
+                                    <span>Transactions</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="money-exchange.html">
+                                    <img src="{% static 'assets/images/icon/exchange.png' %}" alt="Exchange">
+                                    <span>Exchange</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipients.html">
+                                    <img src="{% static 'assets/images/icon/recipients.png' %}" alt="Recipients">
+                                    <span>Recipients</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="deposit-money.html">
+                                    <img src="{% static 'assets/images/icon/deposit.png' %}" alt="Deposit">
+                                    <span>Account details</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="bottom-item">
+                            <li class="active">
+                                <a href="account.html">
+                                    <img src="{% static 'assets/images/icon/account.png' %}" alt="Account">
+                                    <span>Customer details</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="{% static 'assets/images/icon/support.png' %}" alt="Support">
+                                    <span>Support</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="{% static 'assets/images/icon/quit.png' %}" alt="Quit"> <span>Quit</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-section end -->
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse account">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+                    <div class="row">
+
+                        <div class="col-xxl-12 col-xl-8">
+                            <div class="tab-main">
+
+                                <div class="tab-content mt-40">
+                                    <div class="tab-pane fade show active" id="account" role="tabpanel"
+                                        aria-labelledby="account-tab">
+
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="row justify-content-center">
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="BName">Busines Name</label>
+                                                        <input type="text" id="business_name"
+                                                            placeholder="Type your business name" name="business_name">
+                                                    </div>
+                                                </div>
+                                                <!-- Business Information -->
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="business_address">Busines Address</label>
+                                                        <input type="text" id="businss_adress"
+                                                            placeholder="Type your business Address" name="business_address">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="country_of_operation">Country of Operation</label>
+                                                        <input type="text" id="country_of_operation"
+                                                            placeholder="country of operation" name="country_of_operation">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="account_number">Account Number</label>
+                                                        <input type="text" name="account_number" id="account_number"
+                                                            placeholder="Account Number">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="swift_service_requested">SWIFT Service
+                                                            Requested</label>
+                                                        <select name="swift_service_requested"
+                                                            id="swift_service_requested" class="form-control">
+                                                            <option value="MT103">Payment Initiation (SWIFT MT103)
+                                                            </option>
+                                                            <option value="MT202">Fund Transfer Services (SWIFT MT202)
+                                                            </option>
+                                                            <option value="FX">Foreign Exchange Transactions</option>
+                                                            <option value="SEC">Securities Settlements</option>
+                                                            <option value="OTHER">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- SWIFT Service Requested -->
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="other_service_description">Other Service
+                                                            Description</label>
+                                                        <input type="text" name="other_service_description"
+                                                            id="other_service_description"
+                                                            placeholder="Service Description">
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- Contact Information -->
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="primary_contact_name">Primary Contact Name</label>
+                                                        <input type="text" name="primary_contact_name"
+                                                            id="primary_contact_name"
+                                                            placeholder="primary contact name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="contact_email">Contact Email</label>
+                                                        <input type="email" name="contact_email" id="contact_email"
+                                                            placeholder="Contact email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="contact_phone">Contact Phone</label>
+                                                        <input type="text" name="contact_phone" id="contact_phone"
+                                                            placeholder="Contact Phone">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="country_of_incorporation">Country of
+                                                            Incorporation</label>
+                                                        <input type="text" name="country_of_incorporation"
+                                                            id="country_of_incorporation"
+                                                            placeholder="country of incorporation">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="legal_entity_identifier">Legal Entity Identifier
+                                                            (Optional)</label>
+                                                        <input type="text" name="legal_entity_identifier"
+                                                            id="legal_entity_identifier"
+                                                            placeholder="legal entity identifier">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="kyc_aml_documents">Upload KYC/AML Documents</label>
+                                                        <input type="file" name="kyc_aml_documents"
+                                                            id="kyc_aml_documents">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="authorized_signatory_name">Authorized Signatory
+                                                            Name</label>
+                                                        <input type="text" name="authorized_signatory_name"
+                                                            id="authorized_signatory_name"
+                                                            placeholder="authorized signatory name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="additional_notes">Additional Notes</label>
+                                                        <textarea name="additional_notes" id="additional_notes"
+                                                            placeholder="Additional notes"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="btn-border">
+                                                        <button class="cmn-btn" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-content additional-security">
+                                <h5>Additional security</h5>
+                                <div class="single-setting">
+                                    <div class="left">
+                                        <h6>SMS recovery</h6>
+                                        <p>Number ending with 1234</p>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+
+                            <div class="notification-single">
+                                <h6>Announcements</h6>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-single">
+                                <h6>Send payment</h6>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-single">
+                                <h6>Receive a payment</h6>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-single">
+                                <h6>Request payment</h6>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-single">
+                                <h6>Have a problem with a payment</h6>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-single">
+                                <h6>Special Offers</h6>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!--==================================================================-->
+    <script src="{% static 'assets/js/jquery.min.js' %} "></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'assets/js/jquery-ui.js' %} "></script>
+    <script src="{% static 'assets/js/plugin/apexcharts.js' %} "></script>
+    <script src="{% static 'assets/js/plugin/jquery.nice-select.min.js' %} "></script>
+    <script src="{% static 'assets/js/plugin/waypoint.min.js' %} "></script>
+    <script src="{% static 'assets/js/plugin/wow.min.js' %} "></script>
+    <script src="{% static 'assets/js/plugin/plugin.js' %} "></script>
+    <script src="{% static 'assets/js/main.js' %} "></script>
+</body>
 
 </html>

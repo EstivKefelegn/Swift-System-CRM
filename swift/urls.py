@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.swiftAccountDetail)
+    path("", views.swiftAccountDetail),
+    path("confirm/", views.success_page, name="success_page"),
+    
 ]
