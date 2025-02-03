@@ -135,7 +135,9 @@
         </div>
     </header>
     <!-- header-section end -->
-
+    {% block content %}
+    
+    {% endblock content %}
     <!-- Dashboard Section start -->
     <section class="dashboard-section body-collapse account">
         <div class="overlay pt-120">
@@ -166,14 +168,16 @@
                                                     <div class="single-input">
                                                         <label for="business_address">Busines Address</label>
                                                         <input type="text" id="businss_adress"
-                                                            placeholder="Type your business Address" name="business_address">
+                                                            placeholder="Type your business Address"
+                                                            name="business_address">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="single-input">
                                                         <label for="country_of_operation">Country of Operation</label>
                                                         <input type="text" id="country_of_operation"
-                                                            placeholder="country of operation" name="country_of_operation">
+                                                            placeholder="country of operation"
+                                                            name="country_of_operation">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -305,9 +309,9 @@
 
 
                             </div>
-                            
+
                         </div>
-                       
+
                         <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
 
                             <div class="notification-single">
